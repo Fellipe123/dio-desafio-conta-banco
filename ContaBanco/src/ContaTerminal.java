@@ -1,3 +1,4 @@
+package ContaBanco.src;
 import java.util.Scanner;
 
 public class ContaTerminal{
@@ -19,8 +20,10 @@ public class ContaTerminal{
         System.out.println("Por favor, digite saldo!");
         Double saldo = Double.parseDouble(scanner.nextLine());
 
-        System.out.println("Olá ".concat(nomeCliente).concat(", obrigado por criar uma conta em nosso banco, sua agência é ".concat(agencia).concat(", conta ".concat(String.valueOf(numero)).concat(" e seu saldo ".concat(String.valueOf(saldo)).concat(" já está disponível para saque")))));
-        
+        String mensagem = String.format("Olá %s, obrigado por criar uma conta em nosso banco, sua agência é %s, conta %d e seu saldo %.2f já está disponível para saque.", nomeCliente, agencia, numero, saldo);
+
+        System.out.println(mensagem);
+
         scanner.close();
 
     }
